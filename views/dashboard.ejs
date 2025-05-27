@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>BrownCadbuss Hospitals</title>
+   
+  <link rel="stylesheet" href="/stylesheets/style3.css">
+  </head>
+
+<body>
+<div class="container">
+<div class="nav1">
+<div class="hoslogo">
+
+<img class="img0" src="/images/pngegg.png">
+<span class="logow">BrownCadbuss <br> Hospitals</span>
+
+</div>
+<div class="nave">
+<form action="/logout" method="post"> 
+  <input type="submit" value="logout"> 
+</form> 
+  
+</div>
+
+
+</div>
+<nav>
+  <ul>
+    <li>
+      <div class="home-icon"><a href="/dashboard">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div></a>
+      </div>
+    </li>
+    <li>
+      <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="work-icon"><a href="/bookappointments">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"> </div>
+        <div class="lines"></div></a>
+      </div>
+    </li>
+    <li>
+      <div class="mail-icon"><a href="myappointments">
+        <div class="mail-base">
+          <div class="mail-top"></div></a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<section>
+  <h1>Welcome, <%= patient.firstname + ' ' + patient.lastname %></h1>
+    <% if (patient) { %>
+        <h2>Your Profile:</h2>
+        <p>Name: <%= patient.firstname %></p>
+        <p>Email: <%= patient.email %></p>
+        <!-- Add more fields as needed -->
+    <% } else { %>
+        <p>No patient data found.</p>
+    <% } %>
+</section>
+
+
+<div class="navfoot2">
+  
+</div>
+
+
+
+
+</div>
+
+</body>
+</html>
+
+

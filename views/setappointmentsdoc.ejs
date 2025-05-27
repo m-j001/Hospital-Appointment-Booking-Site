@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>BrownCadbuss Hospitals</title>
+   
+  <link rel="stylesheet" href="/stylesheets/style4.css">
+  </head>
+
+<body>
+<div class="container">
+<div class="nav1">
+<div class="hoslogo">
+
+<img class="img0" src="/images/pngegg.png">
+<span class="logow">BrownCadbuss <br> Hospitals</span>
+
+</div>
+<div class="nave">
+<form action="/logoutdoc" method="post"> 
+  <input type="submit" value="logout"> 
+</form> 
+  
+</div>
+
+
+</div>
+<nav>
+  <ul>
+    <li>
+      <div class="home-icon"><a href="/dashboarddoc">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div></a>
+      </div>
+    </li>
+    <li>
+      <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="work-icon"><a href="/setappointmentsdoc">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"> </div>
+        <div class="lines"></div></a>
+      </div>
+    </li>
+    <li>
+      <div class="mail-icon"><a href="myappointmentsdoc">
+        <div class="mail-base">
+          <div class="mail-top"></div></a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+
+
+<div class="formcontainermyapp">
+ 
+<div class="tablecontainermyapp">
+ <table class="table0myapp">
+ <tr>
+ <th> ID </th> 
+ <th> Specialty </th> 
+ <th> Insurance </th> 
+ <th> Hospital Number </th> 
+ <th> Doctor To Visit </th> 
+ <th> Date Created </th> 
+ <th> Status / Approved Meeting Time </th> 
+ <th> Set Meeting Time </th>
+ 
+</tr>
+
+ <% appointment.forEach(appointments => { %>
+<tr>
+    
+
+ <td> <%= appointments.id %></td> 
+ <td> <%= appointments.specialty %></td>
+ <td> <%= appointments.insurance %></td>
+ <td> <%= appointments.hosnum %></td>
+ <td> <%= appointments.doctor %></td>
+ <td> <%= appointments.formattedTime %></td>
+ <td> <%= appointments.status %></td>
+ <form action="/settimedoc" method="post">
+ <input type="hidden" name="id" value="<%= appointments.id %>">
+ <td> <input type="text" name="time" value="" class="input2"> <button type="submit" name="settimedoc" >Save</button></td>
+
+ </form>
+
+ </tr>
+
+ <% }); %>
+
+
+</table>
+
+</div>
+
+</div>
+
+
+<div class="navfoot2">
+  
+</div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
+
+
